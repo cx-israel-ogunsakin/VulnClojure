@@ -1,0 +1,35 @@
+;; VULNERABILITY: Hardcoded database credentials (CWE-798)
+;; This file should NEVER be committed to version control
+
+{:database {:host "localhost"
+            :port 5432
+            :name "sample"
+            :user "admin"
+            :password "SuperSecretPassword123!"}
+ 
+ :redis {:host "localhost"
+         :port 6379
+         :password "redis_password_123"}
+ 
+ :smtp {:host "smtp.example.com"
+        :port 587
+        :user "noreply@example.com"
+        :password "smtp_password_456"}
+ 
+ :api-keys {:stripe "stripe_secret_VULNERABLE_4eC39HqLyjWDarjtT1zdp7dc"
+            :sendgrid "SG.xxxxxxxxxxxxxxxxxxxx"
+            :twilio {:account-sid "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                     :auth-token "your_auth_token_here"}}
+ 
+ :oauth {:google {:client-id "xxxxxxxxxxxx.apps.googleusercontent.com"
+                  :client-secret "GOCSPX-xxxxxxxxxxxxxxxxxxxx"}
+         :github {:client-id "Iv1.xxxxxxxxxxxxxxxx"
+                  :client-secret "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}}
+ 
+ :encryption {:secret-key "my-super-secret-key-do-not-share"
+              :iv "1234567890abcdef"
+              :salt "fixed-salt-value"}
+ 
+ :admin {:username "admin"
+         :password "admin123"
+         :email "admin@example.com"}}
